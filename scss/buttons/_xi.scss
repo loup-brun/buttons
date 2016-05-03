@@ -1,0 +1,73 @@
+// Buttons - XI
+// --------------------------------------------------------------------
+
+// Mixin
+@mixin btn-xi($color, $text-color: lighten($color, 35%)) {
+  background-color: $color;
+  color: $text-color;
+
+  &:hover {
+    background-color: lighten($color, 3%);
+  }
+
+  &:active {
+    background-color: darken($color, 3%);
+    color: darken($color, 20%);
+  }
+}
+
+.btn {
+  $half-shade-height: ($xi-v-spacing + 0.5em * $line-height);
+  @include btn-common($xi-v-spacing, $xi-h-spacing, $xi-border-radius, $xi-border-width);
+  transition: box-shadow 0.2s, background-color 0.2s, color 0.2s;
+  position: relative;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 1px 1px 0 rgba(0,0,0, 0.2), // bottom hard
+    0 2px 4px 0 rgba(0,0,0, 0.2), // bottom spread
+    0 -1px 0 0 rgba(0, 0, 0, 0.1) inset, // inner 3d shadow
+    0 0-$half-shade-height $half-shade-height 0-$half-shade-height rgba(0, 0, 0, 0.3) inset,
+    0 0 1px 0 rgba(0, 0, 0, 0.1)
+    ;
+
+
+  &:active {
+    transition-duration: 0.05s;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+    box-shadow:
+      0 -1px 1px 0 rgba(0,0,0, 0.0), // bottom hard
+      0 -2px 4px 0 rgba(0,0,0, 0.0), // bottom spread
+      0 -1px 0 0 rgba(0, 0, 0, 0.0) inset, // inner 3d shadow
+      0 $half-shade-height $half-shade-height 0-$half-shade-height rgba(0, 0, 0, 0.3) inset,
+      0 0 4px 0 rgba(0, 0, 0, 0.1)
+      ;
+    transform: scale(0.99);
+    
+    &:before { 
+      transform: translateY(1.01);
+    }
+  }
+
+  &:before {
+    $well-width: 8px;
+    content: '';
+    position: absolute;
+    top: -$well-width;
+    left: -$well-width;
+    right: -$well-width;
+    bottom: -$well-width;
+    border-radius: $xi-border-radius + 0.4em;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.1));
+    z-index: -1;
+  }
+}
+
+.btn-primary { @include btn-xi($color-primary); }
+.btn-secondary { @include btn-xi($color-secondary); }
+.btn-tertiary { @include btn-xi($color-tertiary); }
+.btn-tetrary { @include btn-xi($color-tetrary); }
+
+.btn-black { @include btn-xi($gray-darker); }
+.btn-dark { @include btn-xi($gray-dark); }
+.btn-gray { @include btn-xi($gray); }
+.btn-light { @include btn-xi($gray-lighter, darken($gray-lighter, 20%)); }

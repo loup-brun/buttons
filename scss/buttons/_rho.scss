@@ -1,0 +1,72 @@
+// Buttons - RHO
+// --------------------------------------------------------------------
+
+// Mirhon
+@mixin btn-rho($color, $text-color: check-background($color)) {
+
+  &:hover {
+    //background-color: lighten($color, 3%);
+  }
+
+  &:active {
+    background-color: darken($gray-light, 5%);
+    background-image: linear-gradient(0deg, $gray-light, darken($gray-lighter, 5%));
+
+    box-shadow:
+      0 1px 1px rgba(0,0,0,0.1),
+      0 1px 4px rgba(0,0,0,0.1),
+      0 2px 7px rgba(0,0,0,0.2),
+      0 2px 4px rgba(0,0,0,0.1) inset
+      ;
+  }
+
+  &:before {
+    background-color: $color;
+  }
+}
+
+.btn {
+  @include btn-common($rho-v-spacing, $rho-h-spacing, $rho-border-radius, $rho-border-width);
+  transition: box-shadow 0.2s, background-color 0.2s;
+  position: relative;
+
+  background-color: $gray-light;
+  background-image: linear-gradient(0deg, $gray-light, $gray-lighter);
+  color: $gray-dark;
+
+  box-shadow:
+    0 1px 1px rgba(0,0,0,0.3),
+    0 1px 4px rgba(0,0,0,0.3),
+    0 2px 7px rgba(0,0,0,0.4)
+    ;
+
+  &:before {
+    $space: 0.35em;
+    content: '';
+    display: block;
+    position: absolute;
+    padding: $space;
+    text-shadow: none;
+    top: -$space;
+    left: -$space;
+    right: 0-($space);
+    bottom: -$space;
+    border-radius: $rho-border-radius + $space;
+
+    box-shadow:
+      0 1px 1px 0 rgba(0, 0, 0, 0.2) inset,
+      0 3px 3px -2px rgba(0, 0, 0, 0.2) inset
+      ;
+    z-index: -1;
+  }
+}
+
+.btn-primary { @include btn-rho($color-primary); }
+.btn-secondary { @include btn-rho($color-secondary); }
+.btn-tertiary { @include btn-rho($color-tertiary); }
+.btn-tetrary { @include btn-rho($color-tetrary); }
+
+.btn-black { @include btn-rho($gray-darker); }
+.btn-dark { @include btn-rho($gray-dark); }
+.btn-gray { @include btn-rho($gray); }
+.btn-light { @include btn-rho($gray-lighter, darken($gray-lighter, 45%)); }

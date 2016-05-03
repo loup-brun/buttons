@@ -1,0 +1,63 @@
+// Buttons - PHI
+// --------------------------------------------------------------------
+
+// Mixin
+@mixin btn-phi($color, $text-color: check-background($color)) {
+  //background-color: $color;
+  color: $color;
+  border-color: $color;
+
+  box-shadow:
+    6px 0 0 0 $color,
+    6px 6px 0 0 $color,
+    0 6px 0 0 $color
+    ;
+
+
+  &:hover {
+    //background-color: lighten($color, 4%);
+    box-shadow:
+      8px 0 0 0 $color,
+      8px 8px 0 0 $color,
+      0 8px 0 0 $color
+      ;
+  }
+
+  &:active {
+    background-color: $color;
+    color: $text-color;
+    box-shadow:
+      2px 0 0 0 $color,
+      2px 2px 0 0 $color,
+      0 2px 0 0 $color
+      ;
+      ;
+  }
+
+}
+
+.btn {
+  @include btn-common($phi-v-spacing, $phi-h-spacing, $phi-border-radius, $phi-border-width);
+  transition: transform 0.3s $ease-out-back, box-shadow 0.3s, background-color 0.3s;
+  border-radius: 0.5em 0.6em / 0.6em 1em 3em 1em;
+  
+  &:hover {
+    transform: translate(-2px, -2px);
+  }
+
+  &:active {
+    transition-duration: 0.1s;
+    transform: translate(4px, 4px);
+  }
+
+}
+
+.btn-primary { @include btn-phi($color-primary); }
+.btn-secondary { @include btn-phi($color-secondary); }
+.btn-tertiary { @include btn-phi($color-tertiary); }
+.btn-tetrary { @include btn-phi($color-tetrary); }
+
+.btn-black { @include btn-phi($gray-darker); }
+.btn-dark { @include btn-phi($gray-dark); }
+.btn-gray { @include btn-phi($gray); }
+.btn-light { @include btn-phi($gray-lighter, darken($gray-lighter, 45%)); }

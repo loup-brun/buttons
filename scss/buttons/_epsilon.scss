@@ -1,0 +1,61 @@
+// Buttons - EPSILON
+// --------------------------------------------------------------------
+
+// Mixin
+@mixin btn-epsilon($color, $text-color: check-background($color)) {
+  background-color: $color;
+  background-image: linear-gradient(0deg, darken($color, 8%), $color, lighten($color, 5%));
+  color: $text-color;
+  box-shadow:
+    0 2px 0 0 darken($color, 20%), // 3d effect
+    0 ((1em * $line-height) / 2 + $epsilon-v-spacing) 2em 0 rgba(255,255,255,0) inset, // top glow
+      0 2px 1px 0 rgba(255,255,255,0.1) inset, // top light accent
+    0 2px 3px 1px rgba(0,0,0,0.4), // drop shadow spread
+    0 0 12px 1px rgba($color, 0.5), // color glow
+    0 2px 1px -1px rgba(0,0,0,0) inset; // inner dark shadow
+
+  &:hover {
+    box-shadow:
+      0 2px 0 0 darken($color, 20%), // 3d effect
+      0 ((1em * $line-height) / 2 + $epsilon-v-spacing) 1em 0 rgba(255,255,255,0.05) inset, // top glow
+      0 2px 1px 0 rgba(255,255,255,0.15) inset, // top light accent
+      0 2px 3px 1px rgba(0,0,0,0.6), // drop shadow spread
+      0 0 10px 1px rgba($color, 0.4), // color glow
+      0 2px 1px -1px rgba(0,0,0,0) inset; // inner dark shadow
+  }
+
+  &:active {
+    background-color: darken($color, 5%);
+    background-image: linear-gradient(180deg, darken($color, 10%), darken($color, 4%));
+    color: darken($color, 20%);
+    transition: 0s;
+    box-shadow:
+      0 0px 0 0 darken($color, 25%), // 3d effect
+      0 ((1em * $line-height) / 2 + $epsilon-v-spacing) 1em 0 rgba(255,255,255,0.05) inset, // top glow
+      0 2px 2px 0 rgba(255,255,255,0.0) inset, // top light accent
+      0 1px 4px 0px rgba(0,0,0,0), // drop shadow spread
+      0 0 10px 1px rgba($color, 0.1), // color glow
+      0 2px 2px -1px rgba(0,0,0,0.7) inset; // inner dark shadow
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  }
+}
+
+.btn {
+  @include btn-common($epsilon-v-spacing, $epsilon-h-spacing, $epsilon-border-radius);
+  transition: box-shadow 0.15s, transform 0.15s, color 0.15s;
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+
+.btn-primary { @include btn-epsilon($color-primary); }
+.btn-secondary { @include btn-epsilon($color-secondary); }
+.btn-tertiary { @include btn-epsilon($color-tertiary); }
+.btn-tetrary { @include btn-epsilon($color-tetrary); }
+
+.btn-black { @include btn-epsilon($gray-darker); }
+.btn-dark { @include btn-epsilon($gray-dark); }
+.btn-gray { @include btn-epsilon($gray); }
+.btn-light { @include btn-epsilon($gray-lighter); }

@@ -1,0 +1,51 @@
+// Buttons - PI
+// --------------------------------------------------------------------
+
+// Mixin
+@mixin btn-pi($color, $text-color: $color) {
+
+  color: $text-color;
+
+  &:hover {
+  }
+
+  &:active {
+
+  }
+}
+
+.btn {
+  @include btn-common($pi-v-spacing, $pi-h-spacing, $pi-border-radius, $pi-border-width);
+  transition: box-shadow 0.2s, transform 0.2s;
+  border-radius: 12% / 50%;
+
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.1)
+    ;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow:
+      0 1px 10px 1px rgba(0,0,0,0.2)
+      ;
+  }
+
+  &:active {
+
+    transform: scale(0.99);
+    box-shadow:
+      0 2px 6px 1px rgba(0,0,0,0.15) inset
+      ;
+    transition-duration: 0.05s;
+  }
+}
+
+.btn-primary { @include btn-pi($color-primary); }
+.btn-secondary { @include btn-pi($color-secondary); }
+.btn-tertiary { @include btn-pi($color-tertiary); }
+.btn-tetrary { @include btn-pi($color-tetrary); }
+
+.btn-black { @include btn-pi($gray-darker); }
+.btn-dark { @include btn-pi($gray-dark); }
+.btn-gray { @include btn-pi($gray); }
+.btn-light { @include btn-pi($gray-lighter, darken($gray-lighter, 45%)); }

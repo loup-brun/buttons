@@ -1,0 +1,47 @@
+// Buttons - KAPPA
+// --------------------------------------------------------------------
+
+// Mixin
+@mixin btn-kappa($color, $text-color: check-background($color)) {
+  background-color: $color;
+  color: darken($color, 18%);
+
+  box-shadow:
+    0 4px 8px -1px rgba(0, 0, 0, 0.5), // lower shadow
+    inset 0 -2px 5px -1px rgba(darken($color, 15%), 0.6), // bottom 3d effect
+    0 -3px 12px -1px rgba(lighten($color, 15%), 0.6), // top outer glow
+    inset 0 3px 4px -1px rgba(lighten($color, 15%), 0.3), // top inner light
+    inset 0 0 4px 1px rgba(lighten($color, 20%), 0.8), // all-around bevel
+    inset 0 1.1em 1.4em 0 rgba(lighten($color, 15%), 0.5); // bigger top glow
+
+  &:active {
+    color: darken($color, 24%);
+    box-shadow:
+      0 3px 6px -1px rgba(0, 0, 0, 0.4), // lower shadow
+      inset 0 -4px 16px 0 rgba(lighten($color, 15%), 0.9), // bottom 3d effect
+      0 -3px 12px -1px rgba(lighten($color, 15%), 0.6), // top outer glow
+      inset 0 4px 12px 0 rgba(darken($color, 15%), 0.5), // top inner light
+      inset 0 0 4px 1px rgba(lighten($color, 20%), 0.8); // all-around bevel
+  }
+}
+
+.btn {
+  @include btn-common($kappa-v-spacing, $kappa-h-spacing, $kappa-border-radius, $kappa-border-width);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.1);
+
+  transition: box-shadow 0.4s $ease-out-quint, transform 0.4s $ease-out-quint;
+  &:active { 
+    transition-duration: 0.2s;
+    transform: scale(0.98);
+  }
+}
+
+.btn-primary { @include btn-kappa($color-primary); }
+.btn-secondary { @include btn-kappa($color-secondary); }
+.btn-tertiary { @include btn-kappa($color-tertiary); }
+.btn-tetrary { @include btn-kappa($color-tetrary); }
+
+.btn-black { @include btn-kappa($gray-darker); }
+.btn-dark { @include btn-kappa($gray-dark); }
+.btn-gray { @include btn-kappa($gray); }
+.btn-light { @include btn-kappa($gray-lighter); }

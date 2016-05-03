@@ -1,0 +1,62 @@
+// Buttons - ALPHA
+// --------------------------------------------------------------------
+
+// Mixin
+@mixin btn-alpha($color, $text-color: check-background($color)) {
+  box-shadow:
+    0 3px 0 0 darken($color, 15%), // primary 3d effect
+    0 4px 4px -1px rgba(0,0,0,0.6), // mellow drop shadow
+    0 4px 6px 1px rgba(0,0,0,0.3), // drop shadow spread
+    0 1px 2px 1px rgba(0,0,0,0) inset, // dark inner shadow
+    0 18px 32px -2px rgba(255,255,255,0.1) inset; // bright inner shadow
+  background-color: $color;
+  background-image: linear-gradient(-45deg, $color, saturate(adjust-hue($color, -15%), 10%));
+  color: $text-color;
+
+  &:hover {
+    box-shadow:
+      0 3px 0 0 darken($color, 15%), // primary 3d effect
+      0 6px 4px -1px rgba(0,0,0,0.3), // mellow drop shadow
+      0 4px 16px rgba(0,0,0,0.5),// drop shadow spread
+      0 1px 2px 1px rgba(0,0,0,0) inset, // dark inner shadow
+      0 18px 32px -2px rgba(255,255,255,0.14) inset; // bright inner shadow
+  }
+
+  &:active { 
+    box-shadow:
+      0 0px 0 0 darken($color, 20%), // primary 3d effect
+      0 3px 0 0 rgba(0,0,0,0), // mellow drop shadow
+      0 4px 16px rgba(0,0,0,0.0),// drop shadow spread
+      0 1px 2px 1px rgba(0,0,0,0.5) inset, // dark inner shadow
+      0 -18px 32px -2px rgba(255,255,255,0.1) inset; // bright inner shadow
+    ;
+    transition: 0s;
+
+    color: darken($color, 15%);
+    text-shadow:
+      0 1px 0 rgba(255,255,255,0.3);
+  }
+}
+
+.btn {
+  @include btn-common($alpha-v-spacing, $alpha-h-spacing, $alpha-border-radius);
+  transition: box-shadow 0.2s, transform 0.2s, color 0.2s;
+
+  &:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  &:active {
+    transform: translateY(3px);
+  }
+}
+
+.btn-primary { @include btn-alpha($color-primary); }
+.btn-secondary { @include btn-alpha($color-secondary); }
+.btn-tertiary { @include btn-alpha($color-tertiary); }
+.btn-tetrary { @include btn-alpha($color-tetrary); }
+
+.btn-black { @include btn-alpha($gray-darker); }
+.btn-dark { @include btn-alpha($gray-dark); }
+.btn-gray { @include btn-alpha($gray); }
+.btn-light { @include btn-alpha($gray-lighter); }

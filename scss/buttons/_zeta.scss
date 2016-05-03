@@ -1,0 +1,41 @@
+// Buttons - ZETA
+// --------------------------------------------------------------------
+
+// Mixin
+@mixin btn-zeta($color, $text-color: check-background($color)) {
+  color: $text-color;
+  background-color: $color;
+  background-image: linear-gradient(0deg, darken($color, 10%), lighten($color, 2%));
+  border-color: darken($color, 20%);
+  
+  &:active { 
+    background-image: linear-gradient(0deg, darken($color, 10%), darken($color, 6%));
+  }
+}
+
+.btn {
+  @include btn-common($zeta-v-spacing, $zeta-h-spacing, $zeta-border-radius, $zeta-border-width);
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.2) inset,
+    0 1px 3px 0 rgba(0,0,0,0.4)
+    ;
+
+  &:active {
+
+    box-shadow:
+      0 2px 4px -2px rgba(0,0,0,0.2) inset,
+      0 1px 3px 0 rgba(0,0,0,0.1)
+      ;
+
+  }
+}
+
+.btn-primary { @include btn-zeta($color-primary); }
+.btn-secondary { @include btn-zeta($color-secondary); }
+.btn-tertiary { @include btn-zeta($color-tertiary); }
+.btn-tetrary { @include btn-zeta($color-tetrary); }
+
+.btn-black { @include btn-zeta($gray-darker); }
+.btn-dark { @include btn-zeta($gray-dark); }
+.btn-gray { @include btn-zeta($gray); }
+.btn-light { @include btn-zeta($gray-lighter); }

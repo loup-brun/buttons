@@ -1,0 +1,47 @@
+// Mixins
+// --------------------------------------------------------------------
+
+// Functions
+@function check-background($color) {
+  @if (lightness($color) > 66) {
+    @return $gray-darker; // Lighter background, return dark color
+  } @else {
+    @return $gray-lighter; // Darker background, return light color
+  }
+}
+
+@mixin v-padding($padding-top, $padding-bottom: $padding-top) {
+  padding-top: $padding-top;
+  padding-bottom: $padding-bottom;
+}
+
+@mixin h-padding($padding-left, $padding-right: $padding-left) {
+  padding-left: $padding-left;
+  padding-right: $padding-right;
+}
+
+@mixin btn-common($v-spacing, $h-spacing: $v-spacing, $border-radius: 0, $border-width: 0) {
+  display: inline-block;
+  margin: 6px;
+  font-size: inherit;
+  line-height: $line-height;
+  padding: $v-spacing $h-spacing;
+  font-weight: normal;
+  border-width: $border-width;
+  border-style: solid;
+  background: transparent;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-family: $font-family;
+  user-select: none;
+  vertical-align: bottom;
+
+  &.btn-disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+    
+    &:active {
+      opacity: 0.6;
+    }
+  }
+}

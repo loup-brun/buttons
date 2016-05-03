@@ -1,0 +1,63 @@
+// Buttons - delta
+// --------------------------------------------------------------------
+
+// Mixin
+@mixin btn-delta($color, $text-color: check-background($color)) {
+  background-color: $color;
+  background-image: linear-gradient(-45deg, $color, saturate(adjust-hue($color, -15%), 10%));
+  //border-color: $color;
+  color: $text-color;
+  border-top-color: lighten($color, 20%);
+  border-left-color: lighten($color, 6%);
+  border-right-color: lighten($color, 6%);
+  border-bottom-color: darken($color, 20%);
+
+  &:hover {
+    //background-color: $color;
+    //color: $text-color;
+    background-image: linear-gradient(-45deg, lighten($color, 2%), lighten(saturate(adjust-hue($color, -15%), 10%), 2%));
+  }
+
+  &:active {
+    color: darken($color, 20%);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    background-color: darken($color, 2%);
+    background-image: linear-gradient(-45deg, darken($color, 2%), darken(saturate(adjust-hue($color, -15%), 10%), 2%));
+
+    border-top-color: darken($color, 20%);
+    border-left-color: darken($color, 6%);
+    border-right-color: darken($color, 6%);
+    border-bottom-color: darken($color, 6%);
+
+  }
+}
+
+.btn {
+  @include btn-common($delta-v-spacing, $delta-h-spacing, $delta-border-radius, $delta-border-width);
+  background-color: transparent;
+  border-width: $delta-border-width;
+  border-style: solid;
+  box-shadow:
+    0 ((1em * $line-height ) /2 + $delta-v-spacing)  0 0 rgba(255,255,255,0.1) inset;
+  transition: box-shadow 0.3s $ease-out-cubic, border-color 0.3s $ease-out-cubic;
+
+  &:hover {
+
+  }
+
+  &:active {
+    box-shadow:
+      0 ((1em * $line-height ) /2 + $delta-v-spacing) 0.2em 0 rgba(0,0,0,0.08) inset;
+    transition: box-shadow 0.1s;
+  }
+}
+
+.btn-primary { @include btn-delta($color-primary); }
+.btn-secondary { @include btn-delta($color-secondary); }
+.btn-tertiary { @include btn-delta($color-tertiary); }
+.btn-tetrary { @include btn-delta($color-tetrary); }
+
+.btn-black { @include btn-delta($gray-darker); }
+.btn-dark { @include btn-delta($gray-dark); }
+.btn-gray { @include btn-delta($gray); }
+.btn-light { @include btn-delta($gray-lighter); }

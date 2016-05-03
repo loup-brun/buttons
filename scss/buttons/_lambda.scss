@@ -1,0 +1,79 @@
+// Buttons - LAMBDA
+// --------------------------------------------------------------------
+
+// Mixin
+@mixin btn-lambda($color, $text-color: check-background($color)) {
+  background-color: $color;
+  color: $text-color;
+  border-color: darken($color, 8%);
+
+  &:hover {
+    background-color: lighten($color, 1%);
+  }
+
+  &:active {
+    background-color: darken($color, 2%);
+
+  }
+}
+
+.btn {
+  @include btn-common($lambda-v-spacing, $lambda-h-spacing, $lambda-border-radius, $lambda-border-width);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.1);
+  box-shadow:
+    0 1px 4px -1px rgba(255,255,255,0.4) inset, // top protrusion
+
+    0 6px 12px 1px rgba(0,0,0,0.15), // bottom large spread
+    0 6px 2px 1px rgba(0,0,0,0.1), // bottom solid shade
+    6px 6px 12px 1px rgba(0,0,0,0.05), // right large spread
+    -6px 6px 12px 1px rgba(0,0,0,0.05), // left large spread
+    4px 4px 2px 1px rgba(0,0,0,0.07), // bottom right solid shade
+    -4px 4px 2px 1px rgba(0,0,0,0.07), // bottom left solid shade
+    6px 0 2px 1px rgba(255,255,255,0.4), // right solid shade
+    -6px 0 2px 1px rgba(255,255,255,0.4), // left solid shade
+    6px 0 2px 1px rgba(0,0,0,0.1), // right solid shade
+    -6px 0 2px 1px rgba(0,0,0,0.1), // left solid shade
+    4px -4px 2px 1px rgba(255,255,255,0.8), // top left solid shade
+    -4px -4px 2px 1px rgba(255,255,255,0.8), // top left solid shade
+    0 -6px 12px 1px rgba(255,255,255,0.9), // top large spread
+    0 -6px 2px 1px rgba(255,255,255,0.9), // top solid shade
+
+
+    0 0.6em 1em 0 rgba(0,0,0,0.08) inset,
+    0 -0.6em 1em rgba(255,255,255,0.08) inset
+    ;
+
+  transition: box-shadow 0.2s $ease-out-quint, transform 0.35s $ease-out-quint;
+  &:active {
+    box-shadow:
+      0 1px 4px -1px rgba(255,255,255,0.1) inset, // top protrusion
+
+      0 6px 12px 1px rgba(0,0,0,0.2), // bottom large spread
+      0 6px 2px 1px rgba(0,0,0,0.1), // bottom solid shade
+      6px 6px 12px 1px rgba(0,0,0,0.05), // right large spread
+      -6px 6px 12px 1px rgba(0,0,0,0.05), // left large spread
+      4px 4px 2px 1px rgba(0,0,0,0.07), // bottom right solid shade
+      -4px 4px 2px 1px rgba(0,0,0,0.07), // bottom left solid shade
+      6px 0 2px 1px rgba(255,255,255,0.4), // right solid shade
+      -6px 0 2px 1px rgba(255,255,255,0.4), // left solid shade
+      6px 0 2px 1px rgba(0,0,0,0.1), // right solid shade
+      -6px 0 2px 1px rgba(0,0,0,0.1), // left solid shade
+      4px -4px 2px 1px rgba(255,255,255,0.8), // top left solid shade
+      -4px -4px 2px 1px rgba(255,255,255,0.8), // top left solid shade
+      0 -6px 12px 1px rgba(255,255,255,0.9), // top large spread
+      0 -6px 2px 1px rgba(255,255,255,0.9), // top solid shade
+
+      0 0.6em 1em 0 rgba(0,0,0,0.15) inset,
+      0 -0.6em 1em rgba(255,255,255,0.15) inset
+  }
+}
+
+.btn-primary { @include btn-lambda($color-primary); }
+.btn-secondary { @include btn-lambda($color-secondary); }
+.btn-tertiary { @include btn-lambda($color-tertiary); }
+.btn-tetrary { @include btn-lambda($color-tetrary); }
+
+.btn-black { @include btn-lambda($gray-darker); }
+.btn-dark { @include btn-lambda($gray-dark); }
+.btn-gray { @include btn-lambda($gray); }
+.btn-light { @include btn-lambda($gray-lighter); }
