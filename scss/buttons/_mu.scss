@@ -1,0 +1,22 @@
+// Buttons - MU
+// --------------------------------------------------------------------
+
+// Mixin
+@mixin btn-mu($color, $text-color: check-background($color)) {
+  color: $color;
+  border-color: $color;
+}
+
+.btn {
+  @include btn-common($mu-v-spacing, $mu-h-spacing, $mu-border-radius, $mu-border-width);
+}
+
+.btn-primary { @include btn-mu($color-primary); }
+.btn-secondary { @include btn-mu($color-secondary); }
+.btn-tertiary { @include btn-mu($color-tertiary); }
+.btn-tetrary { @include btn-mu($color-tetrary); }
+
+.btn-black { @include btn-mu($gray-darker); }
+.btn-dark { @include btn-mu($gray-dark); }
+.btn-gray { @include btn-mu($gray); }
+.btn-light { @include btn-mu($gray-lighter); }

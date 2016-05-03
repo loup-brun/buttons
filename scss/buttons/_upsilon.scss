@@ -1,0 +1,42 @@
+// Buttons - UPSILON
+// --------------------------------------------------------------------
+
+// Mixin
+@mixin btn-upsilon($color, $text-color: check-background($color)) {
+  background-color: $color;
+  color: $text-color;
+
+
+  &:hover {
+    background-color: lighten($color, 4%);
+  }
+
+  &:active {
+    background-color: darken($color, 4%);
+  }
+}
+
+.btn {
+  @include btn-common($upsilon-v-spacing, $upsilon-h-spacing, $upsilon-border-radius, $upsilon-border-width);
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow:
+    0 -2px 0 0 rgba(0, 0, 0, 0.3) inset
+    ;
+  &:active {
+    transition-duration: 0.1s;
+  box-shadow:
+    0 0 0 0 rgba(0, 0, 0, 0.3) inset
+    ;
+    transform: translateY(1px);
+  }
+}
+
+.btn-primary { @include btn-upsilon($color-primary); }
+.btn-secondary { @include btn-upsilon($color-secondary); }
+.btn-tertiary { @include btn-upsilon($color-tertiary); }
+.btn-tetrary { @include btn-upsilon($color-tetrary); }
+
+.btn-black { @include btn-upsilon($gray-darker); }
+.btn-dark { @include btn-upsilon($gray-dark); }
+.btn-gray { @include btn-upsilon($gray); }
+.btn-light { @include btn-upsilon($gray-lighter, darken($gray-lighter, 45%)); }

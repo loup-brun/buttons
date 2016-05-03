@@ -1,0 +1,45 @@
+// Buttons - GAMMA
+// --------------------------------------------------------------------
+
+// Mixin
+@mixin btn-gamma($color, $text-color: check-background($color)) {
+  color: $text-color;
+  background-color: $color;
+  background-image: linear-gradient(0deg, $color, lighten($color, 4%));
+  border-color: darken($color, 10%);
+  &:hover {
+
+    background-color: darken($color, 4%);
+    background-image: linear-gradient(0deg, darken($color, 4%), $color);
+
+  }
+
+  &:active {
+    
+    background-color: darken($color, 6%);
+    background-image: linear-gradient(0deg, darken($color, 7%), darken($color, 3%));
+    box-shadow:
+      0 1px 3px -1px rgba(0,0,0,0.4) inset
+      ;
+    ;
+  }
+}
+
+.btn {
+  @include btn-common($gamma-v-spacing, $gamma-h-spacing, $gamma-border-radius, $gamma-border-width);
+  box-shadow:
+    0 1px 1px 0 rgba(255,255,255,0.2) inset
+    ;
+
+
+}
+
+.btn-primary { @include btn-gamma($color-primary); }
+.btn-secondary { @include btn-gamma($color-secondary); }
+.btn-tertiary { @include btn-gamma($color-tertiary); }
+.btn-tetrary { @include btn-gamma($color-tetrary); }
+
+.btn-black { @include btn-gamma($gray-darker); }
+.btn-dark { @include btn-gamma($gray-dark); }
+.btn-gray { @include btn-gamma($gray); }
+.btn-light { @include btn-gamma($gray-lighter); }

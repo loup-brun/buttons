@@ -1,0 +1,93 @@
+// Buttons - CHI
+// --------------------------------------------------------------------
+
+// Michin
+@mixin btn-chi($color, $text-color: check-background($color)) {
+  //background-color: $color;
+  color: $color;
+  border-color: $color;
+
+
+  &:hover {
+    //background-color: $color;
+    color: $text-color;
+  }
+
+  &:active {
+
+  }
+
+  &:before {
+    background-color: $color;
+  }
+
+  &:after {
+    border-color: $color;
+  }
+
+}
+
+.btn {
+  $offset: 6px;
+  @include btn-common($chi-v-spacing, $chi-h-spacing, $chi-border-radius, $chi-border-width);
+  position: relative;
+  transition: color 0.4s, transform 0.4s $ease-in-out-cubic;
+  box-sizing: border-box;
+
+  &:hover {
+
+    &:before {
+      transform: scaleY(1);
+    }
+
+    &:after {
+      transform: translate($offset, $offset);
+    }
+  }
+
+  &:active {
+    transition-duration: 0.05s;
+    transform: translate($offset, $offset);
+
+    &:after {
+      transition-duration: 0.05s;
+      transform: translate(0, 0);
+    }
+  }
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &:before {
+    transform-origin: top center;
+    transform: scaleY(0);
+    transition: transform $ease-in-out-expo 0.4s;
+  }
+
+  &:after {
+    top: 0-$chi-border-width;
+    left: 0-$chi-border-width;
+    border-width: $chi-border-width;
+    border-style: solid;
+    transition: transform $ease-in-out-cubic 0.4s;
+  }
+
+}
+
+.btn-primary { @include btn-chi($color-primary); }
+.btn-secondary { @include btn-chi($color-secondary); }
+.btn-tertiary { @include btn-chi($color-tertiary); }
+.btn-tetrary { @include btn-chi($color-tetrary); }
+
+.btn-black { @include btn-chi($gray-darker); }
+.btn-dark { @include btn-chi($gray-dark); }
+.btn-gray { @include btn-chi($gray); }
+.btn-light { @include btn-chi($gray-lighter, darken($gray-lighter, 45%)); }

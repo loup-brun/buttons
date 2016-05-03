@@ -1,0 +1,98 @@
+// Buttons - PSI
+// --------------------------------------------------------------------
+
+$psi-box-distance: 6px;
+
+// Mixin
+@mixin btn-psi($color, $text-color: $color) {
+  color: $text-color;
+  border-color: darken($gray-darker, 10%);
+  text-shadow:
+    0 0 16px rgba($color, 0.5), // large color glow
+    0 -1px 0 rgba(0, 0, 0, 0.9) // 3d effect
+    ;
+
+  &:hover {
+    text-shadow:
+      0 0 16px rgba($color, 0.75), // large color glow
+      0 -1px 0 rgba(0, 0, 0, 0.9) // 3d effect
+      ;
+  }
+
+  &:active {
+    text-shadow: 
+      0 0 16px rgba($color, 0.3), // large color glow
+      0 1px 0 rgba(255, 255, 255, 0.1) // 3d effect
+      ;
+    color: darken($text-color, 10%);
+  }
+
+}
+
+.btn {
+  @include btn-common($psi-v-spacing, $psi-h-spacing, $psi-border-radius, $psi-border-width);
+  position: relative;
+  background-color: $gray-darker;
+  transition: color 0.25s, box-shadow 0.25s;
+  overflow: hidden;
+
+  box-shadow:
+    0 1px 1px -1px rgba(255,255,255,0.8) inset, // top light accent
+    0 40px 20px -20px rgba(255,255,255,0.08) inset, // top inner light
+    0 -1px 1px -1px rgba(0,0,0,0.7) inset, // bottom shade accent
+    0 -40px 20px -20px rgba(0,0,0,0.06) inset, // bottom inner shadow
+    0 11px 8px -3px rgba(0,0,0,0.4), // bottom drop shadow
+    0 4px 2px -2px rgba(0,0,0,0.3), // bottom drop shadow hard
+    0 1px 6px 1px rgba(0,0,0,0.5), // all around
+    ;
+  &:hover {
+
+    &:after {
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    transition-duration: 0.1s;
+    box-shadow:
+      0 -1px 1px -1px rgba(255,255,255,0.3) inset, // top light accent
+      0 -40px 20px -20px rgba(255,255,255,0.05) inset, // top inner light
+      0 -1px 1px -1px rgba(0,0,0,0.7) inset, // bottom shade accent
+      0 40px 20px -20px rgba(0,0,0,0.05) inset, // bottom inner shadow
+      0 11px 8px -3px rgba(0,0,0,0.25), // bottom drop shadow
+      0 4px 2px -2px rgba(0,0,0,0.2), // bottom drop shadow hard
+      0 1px 6px 1px rgba(0,0,0,0.4), // all around
+      ;
+
+    &:after {
+      transition-duration: 0.1s;
+      opacity: 0.2;
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: rotate(-19deg) translateY(-1.3em) scale(1.08);
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+    background-image: linear-gradient(-90deg, rgba(255,255,255,0.18) 10%, rgba(255,255,255,0.0) 45%);
+    opacity: 0.6;
+    transition: opacity 0.25s
+  }
+}
+
+.btn-primary { @include btn-psi($color-primary); }
+.btn-secondary { @include btn-psi($color-secondary); }
+.btn-tertiary { @include btn-psi($color-tertiary); }
+.btn-tetrary { @include btn-psi($color-tetrary); }
+
+.btn-black { @include btn-psi($gray-darker, $gray); }
+.btn-dark { @include btn-psi($gray-dark, $gray); }
+.btn-gray { @include btn-psi($gray, $gray-light); }
+.btn-light { @include btn-psi($gray-lighter); }

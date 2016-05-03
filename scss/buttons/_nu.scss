@@ -1,0 +1,34 @@
+// Buttons - NU
+// --------------------------------------------------------------------
+
+// Mixin
+@mixin btn-nu($color, $text-color: check-background($color)) {
+  color: $color;
+  border-color: $color;
+  &:hover {
+    background-color: $color;
+    color: $text-color;
+    @include h-padding($nu-h-spacing * 1.4);
+    border-radius: $nu-v-spacing / 2;
+  }
+
+  &:active {
+    background-color: darken($color, 3%);
+    border-color: darken($color, 3%);
+  }
+}
+
+.btn {
+  @include btn-common($nu-v-spacing, $nu-h-spacing, $nu-border-radius, $nu-border-width);
+  transition: background-color 0.2s, color 0.2s, padding 0.2s $ease-out-back, border-radius 0.2s;
+}
+
+.btn-primary { @include btn-nu($color-primary); }
+.btn-secondary { @include btn-nu($color-secondary); }
+.btn-tertiary { @include btn-nu($color-tertiary); }
+.btn-tetrary { @include btn-nu($color-tetrary); }
+
+.btn-black { @include btn-nu($gray-darker); }
+.btn-dark { @include btn-nu($gray-dark); }
+.btn-gray { @include btn-nu($gray); }
+.btn-light { @include btn-nu($gray-lighter); }

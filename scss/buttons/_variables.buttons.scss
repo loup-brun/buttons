@@ -1,0 +1,143 @@
+// Buttons - Variables
+// --------------------------------------------------------------------
+
+// alpha
+$alpha-v-spacing:                 0.8em;
+$alpha-h-spacing:                 1.6em;
+$alpha-border-radius:             $alpha-v-spacing / 3;
+
+// beta
+$beta-v-spacing:                  0.35em;
+$beta-h-spacing:                  0.8em;
+$beta-border-radius:              0.2em;
+$beta-border-width:               1px;
+
+// gamma
+$gamma-v-spacing:                 0.3em;
+$gamma-h-spacing:                 1.1em;
+$gamma-border-radius:             (1em * $line-height) / 2 + $gamma-v-spacing;
+$gamma-border-width:              1px;
+// delta
+$delta-v-spacing:                 0.6em;
+$delta-h-spacing:                 1.6em;
+$delta-border-radius:             0.25em;
+$delta-border-width:              1px;
+
+// epsilon
+$epsilon-v-spacing:               0.6em;
+$epsilon-h-spacing:               2.5em;
+$epsilon-border-radius:           (1em * $line-height) / 2 + $epsilon-v-spacing;
+
+// zeta
+$zeta-v-spacing:                  0.2em;
+$zeta-h-spacing:                  0.6em;
+$zeta-border-radius:              0;
+$zeta-border-width:               1px;
+
+// eta
+$eta-v-spacing:                   0.5em;
+$eta-h-spacing:                   1.8em;
+$eta-border-radius:               0.2em;
+$eta-border-width:                2px;
+
+// theta
+$theta-v-spacing:                 0.7em;
+$theta-h-spacing:                 1.4em;
+$theta-border-radius:             0;
+$theta-border-width:              3px;
+
+// kappa
+$kappa-v-spacing:                 0.8em;
+$kappa-h-spacing:                 1.4em;
+$kappa-border-radius:             0.6em;
+$kappa-border-width:              0;
+
+// iota
+$iota-v-spacing:                 0.6em;
+$iota-h-spacing:                 1.6em;
+$iota-border-radius:             (1em * $line-height) / 2 + $iota-v-spacing + 0.15em;
+$iota-border-width:              2px;
+
+// lambda
+$lambda-v-spacing:                0.5em;
+$lambda-h-spacing:                1.8em;
+$lambda-border-radius:            (1em * $line-height) / 2 + $lambda-v-spacing;
+$lambda-border-width:             1px;
+
+// mu
+$mu-v-spacing:                    0.7em;
+$mu-h-spacing:                    1.4em;
+$mu-border-radius:                (1em * $line-height) / 2 + $mu-v-spacing;
+$mu-border-width:                 1px;
+
+// nu
+$nu-v-spacing:                    0.8em;
+$nu-h-spacing:                    2.5em;
+$nu-border-radius:                0;
+$nu-border-width:                 3px;
+
+// xi
+$xi-v-spacing:                    0.6em;
+$xi-h-spacing:                    1.8em;
+$xi-border-radius:                (1em * $line-height) / 2 + $xi-v-spacing;
+$xi-border-width:                 0;
+
+// omicron
+$omicron-v-spacing:               0.8em;
+$omicron-h-spacing:               2.2em;
+$omicron-border-radius:           (1em * $line-height) / 2 + $omicron-v-spacing + 0.15em;
+$omicron-border-width:            2px;
+
+// pi
+$pi-v-spacing:                    0.6em;
+$pi-h-spacing:                    1.6em;
+$pi-border-radius:                0.5em;
+$pi-border-width:                 0;
+
+// rho
+$rho-v-spacing:                   0.6em;
+$rho-h-spacing:                   2.2em;
+$rho-border-radius:               (1em * $line-height) / 2 + $pi-v-spacing + 0.15em;
+$rho-border-width:                0;
+
+// sigma
+$sigma-v-spacing:                 0.45em;
+$sigma-h-spacing:                 2.5em;
+$sigma-border-radius:             0.2em;
+$sigma-border-width:              1px;
+
+// tau
+$tau-v-spacing:                   1.2em;
+$tau-h-spacing:                   2.4em;
+$tau-border-radius:               0;
+$tau-border-width:                0;
+
+// upsilon
+$upsilon-v-spacing:               1.2em;
+$upsilon-h-spacing:               1.6em;
+$upsilon-border-radius:           6px;
+$upsilon-border-width:            0;
+
+// phi
+$phi-v-spacing:                   1.2em;
+$phi-h-spacing:                   1.6em;
+$phi-border-radius:               0.4em;
+$phi-border-width:                3px;
+
+// chi
+$chi-v-spacing:                   0.6em;
+$chi-h-spacing:                   1.8em;
+$chi-border-radius:               0;
+$chi-border-width:                3px;
+
+// psi
+$psi-v-spacing:                   0.5em;
+$psi-h-spacing:                   1.5em;
+$psi-border-radius:               2px;
+$psi-border-width:                2px;
+
+// omega
+$omega-v-spacing:                 0.8em;
+$omega-h-spacing:                 1.6em;
+$omega-border-radius:             0;
+$omega-border-width:              2px;

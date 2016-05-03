@@ -1,0 +1,37 @@
+// Buttons - TAU
+// --------------------------------------------------------------------
+
+// Mixin
+@mixin btn-tau($color, $text-color: check-background($color)) {
+  background-color: $color;
+  color: $text-color;
+
+
+  &:hover {
+    background-color: lighten($color, 4%);
+  }
+
+  &:active {
+    background-color: darken($color, 4%);
+  }
+
+}
+
+.btn {
+  @include btn-common($tau-v-spacing, $tau-h-spacing, $tau-border-radius, $tau-border-width);
+  transition: background-color 0.3s;
+  &:active {
+    transition-duration: 0.1s;
+  }
+
+}
+
+.btn-primary { @include btn-tau($color-primary); }
+.btn-secondary { @include btn-tau($color-secondary); }
+.btn-tertiary { @include btn-tau($color-tertiary); }
+.btn-tetrary { @include btn-tau($color-tetrary); }
+
+.btn-black { @include btn-tau($gray-darker); }
+.btn-dark { @include btn-tau($gray-dark); }
+.btn-gray { @include btn-tau($gray); }
+.btn-light { @include btn-tau($gray-lighter, darken($gray-lighter, 45%)); }

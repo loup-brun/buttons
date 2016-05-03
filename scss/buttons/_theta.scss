@@ -1,0 +1,59 @@
+// Buttons - THETA
+// --------------------------------------------------------------------
+
+// Mixin
+@mixin btn-theta($color, $text-color: check-background($color)) {
+  color: $color;
+  border-color: $color;
+  &:hover {
+    transform: translate(0.2em, -0.1em);
+
+    &:before {
+      transform: translate(-0.4em, 0.4em);
+    }
+  }
+
+  &:active {
+    transform: translate(0, 0);
+    transition-duration: 0.1s;
+    
+    &:before {
+    transition-duration: 0.1s;
+      transform: translate(0, 0);
+      background-color: rgba(adjust-hue($color, 60%), 0.5);
+    }
+  }
+  &:before {
+    background-color: rgba(adjust-hue($color, 60%), 0.4);
+  }
+}
+
+.btn {
+  @include btn-common($theta-v-spacing, $theta-h-spacing, $theta-border-radius, $theta-border-width);
+  position: relative;
+  transform: translate(0.5em -0.4em);
+  transition: transform 0.2s;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transform: translate(0.6em, -0.3em);
+    transition: transform 0.2s, background-color 0.2s;
+  }
+}
+
+.btn-primary { @include btn-theta($color-primary); }
+.btn-secondary { @include btn-theta($color-secondary); }
+.btn-tertiary { @include btn-theta($color-tertiary); }
+.btn-tetrary { @include btn-theta($color-tetrary); }
+
+.btn-black { @include btn-theta($gray-darker); }
+.btn-dark { @include btn-theta($gray-dark); }
+.btn-gray { @include btn-theta($gray); }
+.btn-light { @include btn-theta($gray-lighter); }
