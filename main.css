@@ -5,7 +5,8 @@ body {
   margin: 0; }
 
 button, a {
-  outline: none; }
+  outline: none;
+  -webkit-tap-highlight-color: transparent; }
 
 a {
   text-decoration: none;
