@@ -46,8 +46,8 @@ hr {
 .main-footer {
   background-color: #0B44EF;
   background-image: linear-gradient(-45deg, #0B44EF, #1a8bf4);
-  padding-top: 11%;
-  padding-bottom: 11%;
+  padding-top: 14%;
+  padding-bottom: 14%;
   color: #c9d6fd; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1212,7 +1212,7 @@ h6 {
     background-color: rgba(125, 109, 127, 0.4); }
 
 .theta .btn-light {
-  color: #E6EAEF;
+  color: #3F4351;
   border-color: #E6EAEF; }
   .theta .btn-light:hover {
     transform: translate(0.2em, -0.1em); }
