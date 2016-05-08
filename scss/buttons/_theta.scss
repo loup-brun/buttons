@@ -2,8 +2,8 @@
 // --------------------------------------------------------------------
 
 // Mixin
-@mixin btn-theta($color, $text-color: check-background($color)) {
-  color: $color;
+@mixin btn-theta($color, $text-color: $color) {
+  color: $text-color;
   border-color: $color;
   &:hover {
     transform: translate(0.2em, -0.1em);
@@ -56,4 +56,4 @@
 .btn-black { @include btn-theta($gray-darker); }
 .btn-dark { @include btn-theta($gray-dark); }
 .btn-gray { @include btn-theta($gray); }
-.btn-light { @include btn-theta($gray-lighter); }
+.btn-light { @include btn-theta($gray-lighter, $gray-dark); }
