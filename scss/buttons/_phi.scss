@@ -3,7 +3,6 @@
 
 // Mixin
 @mixin btn-phi($color, $text-color: check-background($color)) {
-  //background-color: $color;
   color: $color;
   border-color: $color;
 
@@ -13,9 +12,7 @@
     0 6px 0 0 $color
     ;
 
-
   &:hover {
-    //background-color: lighten($color, 4%);
     box-shadow:
       8px 0 0 0 $color,
       8px 8px 0 0 $color,
@@ -31,9 +28,7 @@
       2px 2px 0 0 $color,
       0 2px 0 0 $color
       ;
-      ;
   }
-
 }
 
 .btn {

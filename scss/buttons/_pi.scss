@@ -5,13 +5,6 @@
 @mixin btn-pi($color, $text-color: $color) {
 
   color: $text-color;
-
-  &:hover {
-  }
-
-  &:active {
-
-  }
 }
 
 .btn {
@@ -31,7 +24,6 @@
   }
 
   &:active {
-
     transform: scale(0.99);
     box-shadow:
       0 2px 6px 1px rgba(0,0,0,0.15) inset

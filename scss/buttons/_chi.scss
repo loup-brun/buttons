@@ -3,13 +3,11 @@
 
 // Michin
 @mixin btn-chi($color, $text-color: check-background($color)) {
-  //background-color: $color;
   color: $color;
   border-color: $color;
 
 
   &:hover {
-    //background-color: $color;
     color: $text-color;
   }
 

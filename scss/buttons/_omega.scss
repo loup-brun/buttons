@@ -3,15 +3,9 @@
 
 // Mixin
 @mixin btn-omega($color, $text-color: check-background($color)) {
-  
 
   &:hover {
-    //background-color: $color;
     color: $text-color;
-  }
-
-  &:active {
-    
   }
   
   &:before {
@@ -28,10 +22,8 @@
   position: relative;
   
   &:hover {
-    //transform: rotateY(-17deg) rotateX(-12deg);
     
     &:before {
-      //background-color: $default-color;
       transform: scale(0.85, 1.1) translate(8%, -15%);
     }
   }

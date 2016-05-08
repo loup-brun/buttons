@@ -4,10 +4,6 @@
 // Mirhon
 @mixin btn-rho($color, $text-color: check-background($color)) {
 
-  &:hover {
-    //background-color: lighten($color, 3%);
-  }
-
   &:active {
     background-color: darken($gray-light, 5%);
     background-image: linear-gradient(0deg, $gray-light, darken($gray-lighter, 5%));
