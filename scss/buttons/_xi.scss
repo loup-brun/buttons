@@ -49,7 +49,7 @@
   }
 
   &:before {
-    $well-width: 8px;
+    $well-width: 7px;
     content: '';
     position: absolute;
     top: -$well-width;
@@ -57,7 +57,7 @@
     right: -$well-width;
     bottom: -$well-width;
     border-radius: $xi-border-radius + 0.4em;
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.1));
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.1));
     z-index: -1;
   }
 }
