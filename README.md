@@ -2,6 +2,8 @@
 
 A collection of CSS buttons.
 
+[Live demo](https://labs.loupbrun.ca/buttons/).
+
 ## About this project
 
 My goal was to create a variety of stylish buttons for the web, using minimal markup while taking advantage of the HTML5/CSS3 technologies.
