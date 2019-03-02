@@ -1,11 +1,11 @@
 module.exports = function(grunt) {
 
-  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-postcss');
+  grunt.loadNpmTasks('grunt-dart-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.initConfig({
-    sass: {
+    'dart-sass': {
       options: {
         sourceMap: true
       },
@@ -34,10 +34,26 @@ module.exports = function(grunt) {
       }
     }
   });
-  
+
+  // `grunt styles` Build styles
   grunt.registerTask(
     'styles',
     'Compile stylesheets, and add vendor prefixes',
-    ['sass', 'postcss']
+    ['dart-sass', 'postcss']
+  );
+
+
+  // `grunt dev` Watch for style changes
+  grunt.registerTask(
+    'dev',
+    'Watch and rebuild on file changes',
+    ['styles', 'watch']
+  );
+
+  // Default task (by running `grunt`): just build the stylesheet
+  grunt.registerTask(
+    'default',
+    'Compile stylesheets, and add vendor prefixes',
+    ['styles']
   );
 };
