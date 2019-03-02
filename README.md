@@ -28,6 +28,29 @@ Leveraging the power of SASS [mixins](http://sass-lang.com/documentation/file.SA
 .btn-primary { @include btn-alpha($color-primary); }
 ```
 
+## How to develop
+
+The project comes with a simple Grunt setup to compile the `SCSS` to the `main.css` found in root, but feel. Requires [Node.js](https://nodejs.org) and the [`grunt-cli`](https://gruntjs.com/). Pretty standard these days.
+
+### Setup
+
+```bash
+npm i -g grunt-cli # install the grunt-cli
+npm i # install local packages
+```
+
+### Build
+
+```bash
+grunt # build those stylesheets
+```
+
+### Development: watch & rebuild
+
+```bash
+grunt dev
+```
+
 ## Final thoughts
 
 Like any bit of UI, buttons should never be dull. Attention to detail is key in a design with sensibiilty.
