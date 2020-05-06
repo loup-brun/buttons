@@ -2,4 +2,4 @@
 
 Webfonts are now hosted on my assets server.
 
-Please don't copy or redistribute webfonts without explicit permission.
+Please don't copy or redistribute webfonts without ~~explicit permission~~ a license.
